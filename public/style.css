@@ -1,0 +1,1084 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    line-height: 1.6;
+    color: #E0E0E0; /* Lighter text for dark backgrounds */
+    background: linear-gradient(135deg, #1A2A3A 0%, #153A4C 100%); /* Dark, deep blue/teal gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* --- Netflix-inspired Navigation Bar --- */
+.navbar {
+    background: rgba(10, 15, 20, 0.95); /* Very dark, subtle transparent background */
+    backdrop-filter: blur(12px); /* Stronger blur for modern feel */
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle bottom border */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-brand {
+    font-size: 1.8rem; /* Larger brand name */
+    font-weight: 800; /* Extra bold */
+    color: #E50914; /* Netflix Red */
+    letter-spacing: -0.8px;
+    text-shadow: 0 0 8px rgba(229, 9, 20, 0.4); /* Subtle glow */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* More space */
+}
+
+.nav-btn {
+    background: #E50914; /* Netflix Red button */
+    color: white;
+    border: none;
+    padding: 0.6rem 1.6rem; /* Slightly larger padding */
+    border-radius: 30px; /* More rounded pill shape */
+    cursor: pointer;
+    font-weight: 600; /* Made bolder */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth cubic-bezier transition */
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4); /* Red glow shadow */
+}
+
+.nav-btn:hover {
+    background: #FF2631; /* Lighter red on hover */
+    transform: translateY(-3px) scale(1.02); /* Lift and slightly grow */
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.6); /* Enhanced glow */
+}
+
+#userInfo {
+    font-weight: 500;
+    color: #BBBBBB; /* Lighter gray for user info */
+    margin-right: 1rem;
+    letter-spacing: 0.5px;
+}
+
+
+/* --- Main Content Container --- */
+.container {
+    max-width: 1200px;
+    margin: 120px auto 3rem; /* Adjusted top margin for fixed navbar, more bottom margin */
+    padding: 0 2rem;
+    flex-grow: 1;
+    position: relative; /* For alerts positioning */
+}
+
+/* --- Form Styles (Login, Register, New Request) --- */
+.form-container {
+    background: rgba(20, 30, 40, 0.9); /* Darker, semi-transparent background */
+    padding: 2.8rem; /* More padding */
+    border-radius: 18px; /* Softer, more modern corners */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+    max-width: 550px;
+    margin: 3rem auto;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    animation: fadeIn 0.8s ease-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-container h2,
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #FFFFFF; /* White headings */
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 1rem 1.4rem; /* More generous padding */
+    margin-bottom: 1.5rem;
+    border: 1px solid #444444; /* Darker border */
+    border-radius: 10px; /* Softer corners */
+    font-size: 1rem;
+    color: #E0E0E0; /* Lighter text in inputs */
+    background-color: #283848; /* Dark input background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    border-color: #E50914; /* Netflix Red focus */
+    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.2); /* Red glow focus */
+    outline: none;
+    background-color: #304050; /* Slightly lighter on focus */
+}
+
+.form-container textarea {
+    min-height: 140px; /* Taller textarea */
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    color: #BBBBBB; /* Lighter gray */
+    font-size: 0.95rem;
+}
+
+.form-container button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background: #E50914; /* Netflix Red */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    box-shadow: 0 5px 20px rgba(229, 9, 20, 0.4);
+}
+
+.form-container button[type="submit"]:hover {
+    background: #FF2631;
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.6);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1.2rem; /* More space */
+    margin-top: 2rem;
+}
+
+.form-actions button {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600; /* Made bolder */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+.form-actions button[type="button"] { /* For Cancel button */
+    background-color: #333333;
+    color: #E0E0E0;
+    border: 1px solid #555555;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.form-actions button[type="button"]:hover {
+    background-color: #444444;
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: #BBBBBB;
+}
+
+.form-container p a {
+    color: #E50914;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.form-container p a:hover {
+    text-decoration: underline;
+    color: #FF2631;
+}
+
+
+/* --- Dashboard Styles --- */
+.dashboard {
+    background: rgba(20, 30, 40, 0.9); /* Same dark background as forms */
+    padding: 2.8rem;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.8s ease-out; /* Fade in */
+    width: 75%; /* Takes 75% of parent width */
+    max-width: 1000px; /* Cap at a reasonable max width to prevent too wide on huge screens */
+    margin: 3rem auto; /* Center it */
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem; /* More space */
+    padding-bottom: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+.dashboard-header h2 {
+    font-size: 2rem; /* Larger heading */
+    font-weight: 700;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.primary-btn {
+    background: #00A86B; /* A vibrant green for positive actions */
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600; /* Made bolder */
+    font-size: 1.05rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 168, 107, 0.4);
+    white-space: nowrap; /* Ensure text fits */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.primary-btn:hover {
+    background: #00C285; /* Lighter green on hover */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 168, 107, 0.6);
+}
+
+.writer-stats {
+    display: flex;
+    gap: 2rem; /* More space */
+}
+
+.stat {
+    background: rgba(40, 60, 80, 0.8); /* Darker background for stats */
+    padding: 0.7rem 1.4rem;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #88CCEE; /* A vibrant light blue */
+    border: 1px solid rgba(136, 204, 238, 0.2); /* Subtle blue border */
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Tabs for Writer Dashboard --- */
+.requests-tabs {
+    display: flex;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+    font-weight: 600; /* Made bolder */
+    color: #BBBBBB;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+}
+
+.tab-btn:hover {
+    color: #FFFFFF;
+}
+
+.tab-btn.active {
+    color: #E50914; /* Netflix Red active tab */
+    border-bottom-color: #E50914;
+}
+
+#myRequests h3,
+#availableRequests h3,
+#myWork h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1rem;
+}
+
+/* --- Request Card Styles --- */
+.request-card {
+    background: rgba(30, 45, 60, 0.8); /* Slightly lighter dark background for cards */
+    padding: 2rem; /* More padding */
+    border-radius: 12px;
+    margin-bottom: 1.5rem; /* More space between cards */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.request-card:hover {
+    transform: translateY(-5px) scale(1.01); /* More pronounced lift and subtle grow */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35); /* Stronger shadow on hover */
+    border-color: rgba(229, 9, 20, 0.5); /* Highlight border on hover */
+}
+
+.request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.request-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+}
+
+.status-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 25px; /* Fully rounded */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Status colors - adapted for dark theme */
+.status-open { background: #FFD700; color: #6F4E00; } /* Gold */
+.status-accepted { background: #00A86B; color: #FFFFFF; } /* Vibrant Green */
+.status-in_progress { background: #88CCEE; color: #103040; } /* Light Blue */
+.status-ready { background: #4CAF50; color: #FFFFFF; } /* Standard Green */
+.status-delivered { background: #FF8C00; color: #FFFFFF; } /* Dark Orange */
+.status-completed { background: #E50914; color: #FFFFFF; } /* Netflix Red */
+.status-cancelled { background: #FF6347; color: #FFFFFF; } /* Tomato Red */
+
+
+.request-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Larger min-width for details */
+    gap: 1rem 2rem; /* Larger gaps */
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1); /* Subtle dashed line */
+}
+
+.request-detail {
+    display: flex;
+    align-items: flex-start; /* Align icon and text to top */
+    gap: 0.8rem;
+    font-size: 1rem;
+    color: #BBBBBB;
+}
+
+.request-detail strong {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.request-detail.instructions {
+    grid-column: 1 / -1;
+    font-style: italic;
+    color: #999999;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.05); /* Separator for instructions */
+}
+
+.request-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600; /* Made bolder */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* Prevent text wrapping inside buttons */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    min-width: 80px; /* Give a minimum width to prevent excessive squishing */
+}
+
+/* Specific button colors - inspired by Netflix secondary colors/alerts */
+.btn-accept { background: #00A86B; color: white; }
+.btn-accept:hover { background: #00C285; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0, 168, 107, 0.4); }
+
+.btn-chat { background: #555555; color: white; } /* Dark gray for chat, prominent */
+.btn-chat:hover { background: #777777; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); }
+
+.btn-status { background: #FF8C00; color: white; } /* Dark Orange */
+.btn-status:hover { background: #FFA033; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 140, 0, 0.4); }
+
+.btn-rate { background: #E50914; color: white; } /* Netflix Red */
+.btn-rate:hover { background: #FF2631; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(229, 9, 20, 0.4); }
+
+
+/* --- Modals (Chat, Rating) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Very dark, almost opaque overlay */
+    backdrop-filter: blur(15px); /* Stronger blur for pop effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    animation: fadeInModal 0.3s ease-out forwards;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #1A2A3A; /* Modal background matching body gradient start */
+    padding: 0;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 700px; /* Wider chat modal */
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); /* Very deep shadow */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
+    display: flex;
+    flex-direction: column;
+    animation: slideInUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #E50914 0%, #FF2631 100%); /* Netflix Red gradient header */
+    color: white;
+    padding: 1.5rem 2.5rem; /* More padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: white;
+    font-size: 36px; /* Even larger close button */
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.close:hover {
+    transform: rotate(90deg); /* Spin animation */
+    color: #F0F0F0;
+}
+
+
+/* --- Chat Modal Specifics --- */
+.chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    max-height: calc(90vh - 150px); /* Adjust max height */
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1.5rem; /* More padding */
+    overflow-y: auto;
+    background: #101820; /* Very dark chat background */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Gap between messages */
+    scroll-behavior: smooth; /* Smooth scroll */
+}
+
+.message {
+    margin-bottom: 0; /* Handled by gap */
+    padding: 1rem 1.5rem;
+    border-radius: 18px; /* Softer rounded corners */
+    max-width: 78%; /* Allow messages to be wider */
+    word-wrap: break-word;
+    font-size: 0.98rem;
+    opacity: 0; /* For message fade in */
+    animation: messageFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes messageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message.sent {
+    background: linear-gradient(90deg, #E50914 0%, #FF2631 100%); /* Netflix Red gradient for sent */
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 8px; /* Slightly less rounded point */
+    align-self: flex-end;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+}
+
+.message.received {
+    background: #2A3B4C; /* Dark blue/teal for received */
+    color: #E0E0E0;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 8px; /* Slightly less rounded point */
+    align-self: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.message-info {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-bottom: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 400;
+}
+.message.sent .message-info {
+    color: rgba(255, 255, 255, 0.9);
+}
+.message.received .message-info {
+    color: #AAAAAA;
+}
+
+.message-info .sender-name {
+    font-weight: 600;
+    color: #FFFFFF; /* White sender name for both */
+}
+.message.received .message-info .sender-name {
+    color: #88CCEE; /* Light blue sender name for received */
+}
+.message-info .timestamp {
+    font-size: 0.7rem;
+}
+
+
+.message-text {
+    margin-top: 0.5rem;
+    line-height: 1.7;
+    word-break: break-word; /* Ensure long words break */
+}
+
+.message-file {
+    margin-top: 1rem;
+}
+
+.message-file img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.message-file a {
+    color: #88CCEE; /* Light blue for file links */
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.2rem;
+    background: rgba(255, 255, 255, 0.08); /* Subtle background for file link */
+    border-radius: 8px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.message-file a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+
+.chat-input {
+    display: flex;
+    padding: 1.2rem 1.8rem;
+    background: #1A2A3A; /* Dark background for input area */
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 1rem;
+    align-items: center;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 0.9rem 1.4rem;
+    border: 1px solid #444444;
+    border-radius: 30px;
+    outline: none;
+    font-size: 1rem;
+    color: #E0E0E0;
+    background-color: #283848;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input input[type="text"]:focus {
+    border-color: #E50914;
+    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.2);
+}
+
+.chat-input button {
+    background: #E50914; /* Netflix Red button */
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 48px; /* Larger buttons */
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.5rem; /* Larger icons */
+    font-weight: 600; /* Make icons/text bolder */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 3px 10px rgba(229, 9, 20, 0.3);
+}
+
+.chat-input button:hover {
+    background: #FF2631;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(229, 9, 20, 0.5);
+}
+
+#fileNameDisplay {
+    margin-left: 0.8rem;
+    font-size: 0.9rem;
+    color: #BBBBBB;
+    background-color: #333333;
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Increased max width */
+    flex-shrink: 0;
+}
+
+
+/* --- Rating Modal Specifics --- */
+.rating-form {
+    padding: 3rem;
+    text-align: center;
+    background-color: #1A2A3A; /* Consistent background */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.stars {
+    margin: 1.8rem 0 2.8rem;
+    font-size: 3rem; /* Even larger stars */
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.star {
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.2s ease;
+    color: #FFD700; /* Gold color */
+}
+
+.star.active,
+.star:hover {
+    opacity: 1;
+    transform: scale(1.2); /* More pronounced grow */
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* Gold glow */
+}
+
+.rating-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid #444444;
+    border-radius: 10px;
+    resize: vertical;
+    min-height: 120px;
+    margin-bottom: 1.8rem;
+    font-size: 1rem;
+    color: #E0E0E0;
+    background-color: #283848;
+}
+.rating-form textarea:focus {
+    border-color: #E50914;
+    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.2);
+    outline: none;
+}
+
+.rating-form button {
+    background: #E50914;
+    color: white;
+    border: none;
+    padding: 0.9rem 3rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600; /* Made bolder */
+    font-size: 1.15rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 20px rgba(229, 9, 20, 0.4);
+}
+
+.rating-form button:hover {
+    background: #FF2631;
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.6);
+}
+
+/* --- Alerts --- */
+.alert {
+    padding: 1.2rem 1.8rem;
+    margin: 1.5rem auto 1rem;
+    border-radius: 10px;
+    font-weight: 600; /* Made bolder */
+    font-size: 1rem;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: slideInFromTop 0.4s ease-out forwards;
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.alert-success {
+    background: #4CAF50; /* Standard Green */
+    color: white;
+    border: 1px solid #388E3C;
+}
+
+.alert-error {
+    background: #E50914; /* Netflix Red */
+    color: white;
+    border: 1px solid #CC0000;
+}
+
+.alert-info {
+    background: #2196F3; /* Standard Blue */
+    color: white;
+    border: 1px solid #1976D2;
+}
+
+/* --- Loading Spinner --- */
+.loading {
+    display: inline-block;
+    width: 25px; /* Larger spinner */
+    height: 25px;
+    border: 4px solid rgba(255, 255, 255, 0.3); /* Lighter border for contrast */
+    border-top: 4px solid #E50914; /* Netflix Red spinner */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Empty State --- */
+.empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    color: #AAAAAA;
+    background: rgba(30, 45, 60, 0.6);
+    border-radius: 12px;
+    margin-top: 2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.empty-state-icon {
+    font-size: 5rem; /* Much larger icon */
+    margin-bottom: 2rem;
+    color: #666666; /* Muted dark gray */
+}
+.empty-state p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: #BBBBBB;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .nav-brand {
+        font-size: 1.6rem;
+    }
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    #userInfo {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+        margin-top: 130px; /* Adjusted for larger mobile navbar */
+    }
+
+    .form-container,
+    .dashboard,
+    .modal-content {
+        padding: 2rem 1.5rem;
+        margin: 2rem auto;
+        border-radius: 10px;
+    }
+    /* Specific adjustment for dashboard on small screens */
+    .dashboard {
+        width: 100%; /* Allow it to take full width on small screens */
+        max-width: none; /* Remove max-width constraint on small screens */
+    }
+
+
+    .dashboard-header {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+    .dashboard-header h2 {
+        font-size: 1.8rem;
+    }
+    .primary-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .writer-stats {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    .stat {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .requests-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+        flex: 1 1 auto;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    #myRequests h3,
+    #availableRequests h3,
+    #myWork h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.8rem;
+    }
+
+    .request-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+    .request-title {
+        font-size: 1.2rem;
+    }
+    .status-badge {
+        font-size: 0.8rem;
+    }
+    .request-details {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+    .request-detail {
+        font-size: 0.9rem;
+    }
+    .request-actions {
+        justify-content: stretch;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    .request-actions .btn {
+        width: 100%;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .modal-header {
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    .close {
+        font-size: 30px;
+    }
+
+    .chat-container {
+        height: 60vh;
+        min-height: 250px;
+        max-height: calc(100vh - 120px);
+    }
+    .chat-messages {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+    .message {
+        max-width: 90%;
+        padding: 0.8rem 1.2rem;
+        border-radius: 12px;
+        font-size: 0.9rem;
+    }
+    .message-info {
+        font-size: 0.7rem;
+    }
+
+    .chat-input {
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 0.6rem;
+    }
+    .chat-input input[type="text"] {
+        flex: 1 1 100%;
+        order: 1;
+        margin-bottom: 0.5rem;
+        padding: 0.8rem 1.2rem;
+    }
+    .chat-input button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        order: 2;
+    }
+    #fileNameDisplay {
+        order: 3;
+        flex: 1 1 100%;
+        text-align: center;
+        margin: 0.5rem 0 0;
+        max-width: none;
+        font-size: 0.8rem;
+    }
+    #sendBtn {
+        margin-left: auto;
+    }
+
+    .rating-form {
+        padding: 2rem;
+    }
+    .stars {
+        font-size: 2.5rem;
+        gap: 0.6rem;
+        margin: 1.5rem 0 2rem;
+    }
+    .rating-form textarea {
+        min-height: 100px;
+        margin-bottom: 1.5rem;
+    }
+    .rating-form button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .alert {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.85rem;
+        margin: 1rem auto;
+    }
+
+    .empty-state {
+        padding: 3rem 1.5rem;
+    }
+    .empty-state-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+    .empty-state p {
+        font-size: 1rem;
+    }
+}
+/* Add this to your existing CSS */
+.dashboard, .student-dashboard {
+    background: rgba(20, 30, 40, 0.9);
+    padding: 2.8rem;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.8s ease-out;
+    width: 75%;
+    max-width: 1000px;
+    margin: 3rem auto;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .dashboard, .student-dashboard {
+        width: 100%;
+        max-width: none;
+        padding: 2rem 1.5rem;
+        margin: 2rem auto;
+        border-radius: 10px;
+    }
+}
